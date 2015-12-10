@@ -1,0 +1,11 @@
+﻿<Window x:Class="AttachedProperty.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300" Loaded="Window_Loaded">
+    <!--使用TextBlock附加属性指定StackPanel控件中文本块的字体大小-->
+    <StackPanel TextBlock.FontSize="18" Name="StackPanel1">
+        <TextBlock>这是第一个文本块</TextBlock>
+        <TextBlock>这是第二个文本块</TextBlock>
+        <TextBlock FontSize="9">这是第三个文本块</TextBlock>
+    </StackPanel>
+</Window>

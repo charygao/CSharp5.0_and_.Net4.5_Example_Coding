@@ -1,0 +1,39 @@
+﻿<Window x:Class="MultiTriggerDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="样式触发器示例2" Height="300" Width="300">
+    <Window.Resources>
+        <Style x:Key="MouseIsOver">
+            <!--定义基本样式-->
+            <Setter Property="Control.FontSize" Value="20"/>
+            <Setter Property="Control.Margin" Value="10"/>
+            <Style.Triggers>
+                <!--定义简单触发器，当按钮按下时，显示红色背景-->
+                <Trigger Property="Button.IsPressed" Value="True">
+                    <Setter Property="Control.Background" Value="Red"/>
+                </Trigger>
+                <!--定义多触发器，当鼠标经过有焦点的按钮时，设置按钮前景色为DarkRed-->
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Control.IsFocused" Value="True"/>
+                        <Condition Property="Control.IsMouseOver" Value="True"/>
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.Setters>
+                        <Setter Property="Control.Foreground" Value="DarkRed" />
+                    </MultiTrigger.Setters>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--使用MouseIsOver定义了简单触发器的样式-->
+        <Button Name="btn1" Grid.Row="0" Style="{StaticResource MouseIsOver}">按钮1</Button>
+        <Button Name="btn2" Grid.Row="1" Style="{StaticResource MouseIsOver}">按钮2</Button>
+    </Grid>
+</Window>
+

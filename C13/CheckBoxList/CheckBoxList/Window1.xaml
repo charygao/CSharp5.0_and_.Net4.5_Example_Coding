@@ -1,0 +1,18 @@
+﻿<Window x:Class="CheckBoxList.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ListBox的示例" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Name="txtSelection"></TextBlock>
+        <ListBox Name="lst" SelectionChanged="ListBox_SelectionChanged" Grid.Row="1">
+            <CheckBox>WPF程序设计书籍</CheckBox>
+            <CheckBox>WCF程序设计书籍</CheckBox>
+            <CheckBox>WF程序设计书籍</CheckBox>
+            <CheckBox>LINQ程序设计书籍</CheckBox>
+        </ListBox>
+    </Grid>
+</Window>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="GeometryDrawingDemo.ImageDrawingDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ImageDrawingDemo" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Rectangle Width="250" Height="100" Stroke="Black" StrokeThickness="2" Margin="32,10,10,25">
+            <Rectangle.Fill>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <!--使用ImageDrawing绘制图像-->
+                    <ImageDrawing Rect="50,50,100,100" ImageSource="SL381106.jpg"/>
+                     </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+    </Grid>
+</Window>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="DataTriggerDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="数据触发器" Height="300" Width="300">
+    <Window.Resources>
+        <Style x:Key="DataTextTrigger">
+            <!--定义基本样式-->
+            <Setter Property="Control.FontSize" Value="20"/>
+            <Setter Property="Control.Margin" Value="10"/>
+            <!--将控件的背景色设置为文本框中输入的颜色-->
+            <Setter Property="Control.Background" Value="{Binding RelativeSource={RelativeSource Self}, Path=Text}"/>
+            <Style.Triggers>
+                <!--当文本中输入的字符超过100时，则文本框的Enable为False-->
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text.Length}" Value="100">
+                    <Setter Property="Control.IsEnabled" Value="False"/>
+                </DataTrigger>                
+            </Style.Triggers>  
+            
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--定义一个文本框，引用DataTextTrigger样式-->
+        <TextBox Style="{StaticResource DataTextTrigger}" Text="AliceBlue" Margin="10" Name="txtBox1"></TextBox>
+        <TextBox Style="{StaticResource DataTextTrigger}" Text="AliceBlue" Margin="10" Grid.Row="1" Name="txtBox2"></TextBox>
+    </Grid>
+</Window>

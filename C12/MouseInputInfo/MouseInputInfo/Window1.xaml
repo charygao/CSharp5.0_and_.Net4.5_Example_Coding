@@ -1,0 +1,26 @@
+﻿<Window x:Class="MouseInputInfo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="GetPosition示例" Height="300" Width="300">
+    <!--定义一个二行的Grid,第一行显示一个画布，第二行显示鼠标信息-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Canvas MouseMove="MouseMoveHandler" Name="Canvas1"
+          Background="LemonChiffon">
+            <Ellipse Name="ellipse" Fill="LightBlue" 
+             Width="100" Height="100"/>
+        </Canvas>
+        <!--用于显示当前坐标点的位置-->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+            <TextBlock Text="X坐标："></TextBlock>
+            <TextBlock Name="xPositionLabel"></TextBlock>
+            <TextBlock Text="Y坐标：" Margin="10,0,0,0"></TextBlock>
+            <TextBlock Name="yPositionLabel"></TextBlock>
+        </StackPanel>
+    </Grid>
+   
+
+</Window>

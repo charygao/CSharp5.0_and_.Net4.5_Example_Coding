@@ -1,0 +1,11 @@
+﻿<Window x:Class="WindowDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF窗口" Height="100" Width="300" WindowStyle="ToolWindow" AllowsTransparency="True">
+    <Window.Background>
+        <SolidColorBrush  Color="Transparent"/>
+    </Window.Background>
+    <Grid>
+        <TextBlock Text="WindowStyle=ToolWindow" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"></TextBlock>
+    </Grid>
+</Window>

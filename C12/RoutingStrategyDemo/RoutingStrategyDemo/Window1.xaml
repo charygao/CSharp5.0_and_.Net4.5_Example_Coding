@@ -1,0 +1,24 @@
+﻿<Window x:Class="RoutingStrategyDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <!--定义两行一列的Grid,并附加事件-->
+    <Grid PreviewMouseDown="Grid_PreviewMouseDown">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--文本框来显示事件触发次序-->
+        <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Name="txt"></TextBox>
+        <!--组合按钮，并触发事件-->
+        <Button x:Name="btn1" Grid.Row="1" HorizontalAlignment="Right" PreviewMouseDown="btn1_PreviewMouseDown" Click="btn1_Click">
+            <Button.Content>
+                <!--StackPanel并触发事件-->
+                <StackPanel Orientation="Horizontal" PreviewMouseDown="StackPanel_PreviewMouseDown" MouseDown="StackPanel_MouseDown">
+                    <Image Source="OpenPH.bmp"  PreviewMouseDown="Image_PreviewMouseDown" MouseDown="Image_MouseDown"></Image>
+                    <TextBlock Text="点击这里"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+    </Grid>
+</Window>

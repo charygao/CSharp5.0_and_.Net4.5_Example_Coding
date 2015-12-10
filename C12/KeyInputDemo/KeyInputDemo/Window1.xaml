@@ -1,0 +1,30 @@
+﻿<Window x:Class="KeyInputDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="键盘事件示例" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--StackPanel中放置一个TextBlock和一个TextBox控件-->
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="请输入："></TextBlock>
+            <!--定义键盘事件-->
+            <TextBox Name="txt1" Width="200" 
+                     PreviewKeyDown="KeyEvents" 
+                     KeyDown="KeyEvents" 
+                     PreviewKeyUp="KeyEvents" 
+                     KeyUp="KeyEvents" 
+                     PreviewTextInput="InputEvent" 
+                     TextInput="InputEvent">                
+            </TextBox>
+        </StackPanel>
+        <TextBox Grid.Row="1" Name="txt2"></TextBox>
+        <!--如果选中此复选框，则忽略重复的按键-->
+        <CheckBox Content="忽略重复键" Grid.Row="2" Name="isRepeatcb"></CheckBox>
+        <Button Content="清除文本框" Grid.Row="3" HorizontalAlignment="Right" Click="Button_Click"></Button>
+    </Grid>
+</Window>

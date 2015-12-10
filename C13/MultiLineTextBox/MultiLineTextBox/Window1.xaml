@@ -1,0 +1,37 @@
+﻿<Window x:Class="MultiLineTextBox.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+               <Button Name="btn1" Click="btn1_Click">显示文本行数</Button>
+                <Button Name="btn2" Click="btn2_Click">编程选择文本</Button>
+                </StackPanel>
+        <TextBox
+         Name="tbMultiLine"
+         TextWrapping="Wrap"
+         AcceptsReturn="True"
+         MinLines="6"
+         VerticalScrollBarVisibility="Visible"
+         SelectionChanged="tbMultiLine_SelectionChanged">
+            这个TextBox将允许用户输入多行文本，当按下回车键或者输入的文本到达文本框边缘，一个新行将自被插入。
+        </TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="具有拼写检查效果的文本框"></TextBlock>
+            <TextBox Name="tbSpell" 
+                     Language="en-US"
+                     TextWrapping="Wrap" 
+                     AcceptsReturn="True" 
+                     VerticalScrollBarVisibility="Visible"
+                     SpellCheck.IsEnabled="True"
+                     MinLines="5"></TextBox>
+        </StackPanel>
+    </Grid>
+</Window>

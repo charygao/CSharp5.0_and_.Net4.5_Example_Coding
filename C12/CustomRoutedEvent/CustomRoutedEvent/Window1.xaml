@@ -1,0 +1,15 @@
+﻿<Window x:Class="CustomRoutedEvent.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:CustomRoutedEvent"
+    Title="Window1" Height="300" Width="300">
+    <Grid>
+        <!--定义两行的Grid-->
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--使用自定义控件-->
+        <local:MyButton Hit="MyButton_Hit" x:Name="hitButton" Width="80">Hit Button</local:MyButton>
+    </Grid>    
+</Window>

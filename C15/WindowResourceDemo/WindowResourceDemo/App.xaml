@@ -1,0 +1,8 @@
+﻿<Application x:Class="WindowResourceDemo.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    StartupUri="Window1.xaml">
+    <Application.Resources>
+        <SolidColorBrush x:Key="BackgroundColor" Color="Yellow"></SolidColorBrush>
+    </Application.Resources>
+</Application>

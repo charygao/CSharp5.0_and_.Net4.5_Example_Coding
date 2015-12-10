@@ -1,0 +1,34 @@
+﻿<Window x:Class="GridDemo.SpanningGrid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="跨越多行多列示例" Height="150" Width="400">
+   <!--定义一个五列四行的网格-->
+    <Grid Background="#EEEEFF"
+        ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--在第1列，第0行显示一个文本块，并且使其跨越4列-->
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="0" TextWrapping="Wrap">
+            请输入程序名称、文件夹、文档或者是Internet资源，Window将会打开该资源     
+       </TextBlock>
+        <!--创建一个Image对象来显示图像，使其放在第0行0列，跨越2行-->
+        <Image Source="ComputerIcon.jpg" Grid.Row="0" Grid.RowSpan="2"></Image>
+        <!--在第2行第1列，放置一个TextBox控件用来显示一个文本框，该文本框跨越5列-->
+        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" />
+        <!--在第4行的不同的列中分别放置三个按钮-->
+        <Button Margin="10, 0, 10, 15" Grid.Row="3" Grid.Column="2">确定</Button>
+        <Button Margin="10, 0, 10, 15" Grid.Row="3" Grid.Column="3">取消</Button>
+        <Button Margin="10, 0, 10, 15" Grid.Row="3" Grid.Column="4">浏览 ...</Button>
+    </Grid>
+</Window>

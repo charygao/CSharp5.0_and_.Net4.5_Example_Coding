@@ -1,0 +1,17 @@
+﻿<Window x:Class="HeaderedContentControlDemo.ExpanderLazyLoad"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="动态加载Expander的内容" Height="300" Width="300" SizeToContent="Manual">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--当点击展开按钮时，触发Expanded事件，在此事件中动态加载文本文件，并将内容赋给Textblock-->
+       <Expander Grid.Row="0" Header="Expander控件简介" Name="expander2"  Expanded="expander1_Expanded">
+           <!--当文本内容过长时，允许用户滚动查看-->
+            <ScrollViewer Height="300">
+                <TextBlock TextWrapping="Wrap" Name="txt"></TextBlock>
+                </ScrollViewer>
+        </Expander>
+    </Grid>
+</Window>

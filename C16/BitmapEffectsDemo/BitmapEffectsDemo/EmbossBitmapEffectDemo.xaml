@@ -1,0 +1,21 @@
+﻿<Window x:Class="BitmapEffectsDemo.EmbossBitmapEffectDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="EmbossBitmapEffect浮雕效果示例" Height="500" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--应用浮雕效果前-->        
+        <Image Source="SL381106.jpg" Stretch="Fill" Margin="20">          
+        </Image>
+        <!--应用浮雕效果后-->
+        <Image Source="SL381106.jpg" Stretch="Fill" Grid.Row="1" Margin="20">
+            <Image.BitmapEffect>
+                <EmbossBitmapEffect Relief="0.9" LightAngle="320" />
+            </Image.BitmapEffect>
+        </Image>
+    </Grid>
+</Window>

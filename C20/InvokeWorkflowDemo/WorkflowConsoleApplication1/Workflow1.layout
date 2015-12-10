@@ -1,0 +1,65 @@
+﻿<StateMachineWorkflowDesigner xmlns:ns0="clr-namespace:System.Drawing;Assembly=System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Name="Workflow1" Location="30, 30" Size="843, 272" AutoSize="False" AutoSizeMargin="16, 24" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateMachineWorkflowDesigner.DesignerConnectors>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="stateActivity1" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setStateActivity1" SourceStateName="Workflow1InitialState" SourceConnectionEdge="Right" TargetActivity="stateActivity1" SourceActivity="Workflow1InitialState" EventHandlerName="stateInitializationActivity1">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="264" Y="115" />
+				<ns0:Point X="280" Y="115" />
+				<ns0:Point X="280" Y="61" />
+				<ns0:Point X="430" Y="61" />
+				<ns0:Point X="430" Y="69" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="stateActivity2" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setStateActivity2" SourceStateName="stateActivity1" SourceConnectionEdge="Right" TargetActivity="stateActivity2" SourceActivity="stateActivity1" EventHandlerName="stateInitializationActivity2">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="537" Y="110" />
+				<ns0:Point X="551" Y="110" />
+				<ns0:Point X="551" Y="167" />
+				<ns0:Point X="151" Y="167" />
+				<ns0:Point X="151" Y="179" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="stateActivity3" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setStateActivity3" SourceStateName="stateActivity2" SourceConnectionEdge="Right" TargetActivity="stateActivity3" SourceActivity="stateActivity2" EventHandlerName="eventDrivenActivity1">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="233" Y="220" />
+				<ns0:Point X="249" Y="220" />
+				<ns0:Point X="249" Y="184" />
+				<ns0:Point X="388" Y="184" />
+				<ns0:Point X="388" Y="192" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+	</StateMachineWorkflowDesigner.DesignerConnectors>
+	<StateMachineWorkflowDesigner.Designers>
+		<StateDesigner Name="Workflow1InitialState" Location="46, 74" Size="222, 80" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<StateInitializationDesigner Size="150, 190" Name="stateInitializationActivity1" Location="54, 105">
+					<StateInitializationDesigner.Designers>
+						<CodeDesigner Size="130, 41" Name="codeActivity1" Location="64, 166" />
+						<SetStateDesigner Size="130, 50" Name="setStateActivity1" Location="64, 226" />
+					</StateInitializationDesigner.Designers>
+				</StateInitializationDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="stateActivity1" Location="319, 69" Size="222, 80" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<StateInitializationDesigner Size="843, 835" Name="stateInitializationActivity2" Location="327, 100">
+					<StateInitializationDesigner.Designers>
+						<InvokeWorkflowDesigner Size="823, 686" Name="invokeWorkflowActivity1" Location="337, 161" />
+						<SetStateDesigner Size="130, 50" Name="setStateActivity2" Location="683, 866" />
+					</StateInitializationDesigner.Designers>
+				</StateInitializationDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="stateActivity2" Location="65, 179" Size="172, 80" AutoSize="False" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="150, 250" Name="eventDrivenActivity1" Location="376, 148">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 41" Name="handleExternalEventActivity1" Location="386, 209" />
+						<CodeDesigner Size="130, 41" Name="codeActivity2" Location="386, 269" />
+						<SetStateDesigner Size="130, 50" Name="setStateActivity3" Location="386, 329" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="stateActivity3" Location="308, 192" Size="160, 80" AutoSizeMargin="16, 24" />
+	</StateMachineWorkflowDesigner.Designers>
+</StateMachineWorkflowDesigner>

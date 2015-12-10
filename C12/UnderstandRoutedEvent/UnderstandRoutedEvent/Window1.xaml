@@ -1,0 +1,27 @@
+﻿<Window x:Class="UnderstandRoutedEvent.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300" Name="Win1"
+    ButtonBase.Click="button1_Click">
+    <!--为Window和Grid分别关联ButtonBase的Click事件-->
+    <Grid Name="Grid" ButtonBase.Click="button1_Click">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBox Name="textBox1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+        <!--在按钮的Parent中添加ButtonBase的Click事件关联-->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Name="stk" ButtonBase.Click="button1_Click">
+        <!--为按钮指定单击事件-->
+        <Button  Height="23" Name="button1" Click="button1_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="OpenPL.bmp" Name="img"></Image>
+                    <TextBlock Text="点击触发单击事件" Name="txt"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+            <Button Name="button2" Click="button1_Click" Margin="10,0,0,0">点击触发单击事件</Button>
+      </StackPanel>
+    </Grid>
+</Window>

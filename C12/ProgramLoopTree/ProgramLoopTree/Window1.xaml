@@ -1,0 +1,31 @@
+﻿<Window x:Class="ProgramLoopTree.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <Grid>
+        <!--创建一个树状结构-->
+        <TreeView Name="Tree1">
+            <TreeViewItem Header="顶层节点" IsExpanded="True">
+                <TreeViewItem Header="子节点" />
+                <TreeViewItem Header="同级子节点" IsExpanded="True">
+                    <TreeViewItem Header="孙子节点" />
+                    <TreeViewItem Header="孙子节点" />
+                </TreeViewItem>
+                <TreeViewItem Header="第三级子节点" />
+            </TreeViewItem>
+            <!--与顶层结点同级的二级节点-->
+            <TreeViewItem Header="第二级节点">
+                <TreeViewItem Header="子节点1" />
+                <TreeViewItem Header="子节点2" />
+                <TreeViewItem Header="子节点3" />
+            </TreeViewItem>
+            <!--与顶层结点同级的三级节点-->
+            <TreeViewItem IsExpanded="True" Header="第三级节点">
+                <TreeViewItem Header="首个子节点"/>
+                <TreeViewItem Header="子节点1" />
+                <TreeViewItem Header="子节点2" />
+                <TreeViewItem Header="子节点3" />
+            </TreeViewItem>
+        </TreeView>
+    </Grid>
+</Window>

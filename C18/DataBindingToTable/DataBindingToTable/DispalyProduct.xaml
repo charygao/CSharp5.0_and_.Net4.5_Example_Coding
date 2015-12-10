@@ -1,0 +1,69 @@
+﻿<Window x:Class="DataBindingToTable.DispalyProduct"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="产品信息" Height="500" Width="400">
+    <Grid>
+        <!--最外层由一个两行的Grid组成，上面的Grid将显示产品查询窗口-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+         <!--在外层Grid的第1行创建一个Grid，用于定义获取产品信息的用户界面-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <!--定义产品查询信息的界面-->
+            <TextBlock Margin="7">产品编号:</TextBlock>
+            <TextBox Name="txtID" Margin="5" Grid.Column="1">10</TextBox>
+            <Button Click="cmdGetProduct_Click" Margin="5" Padding="2" Grid.Column="2">获取产品信息</Button>
+        </Grid>
+        <!--在最外层Grid的第二行放一个Border，设置其背景色为LightSteelBlue使其具有漂亮的外观-->
+        <Border Grid.Row="1" Padding="7" Margin="7" Background="LightSteelBlue">
+            <!--在Border内部定义一个Grid用来摆放用户界面，在这里为Grid指定了Name属性以便于在后台代码中为其指定DataContext-->
+            <Grid  Name="gridProductDetails">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                 <!--下面的用户界面定义代码，使用Binding.Path属性指定Product类的属性-->
+                <TextBlock Margin="7">产品名称:</TextBlock>
+                <TextBox Margin="5" Grid.Column="1" Text="{Binding Path=ProductName}"></TextBox>
+                <TextBlock Margin="7" Grid.Row="1">供应商编码:</TextBlock>
+                <TextBox Margin="5" Grid.Row="1" Grid.Column="1" Text="{Binding Path=SupplierID}"></TextBox>
+                <TextBlock Margin="7" Grid.Row="2">产品分类编码:</TextBlock>
+                <TextBox Margin="5" Grid.Row="2" Grid.Column="1" Text="{Binding Path=CategoryID}"></TextBox>
+                <TextBlock Margin="7,7,7,0" Grid.Row="3">单位数量:</TextBlock>
+                <TextBox Margin="5" Grid.Row="3" Grid.Column="1" Text="{Binding Path=QuantityPerUnit}"></TextBox>
+                <TextBlock Margin="7,7,7,0" Grid.Row="4">产品单价:</TextBlock>
+                <TextBox Margin="5" Grid.Row="4" Grid.Column="1" Text="{Binding Path=UnitPrice}"></TextBox>
+                <TextBlock Margin="7,7,7,0" Grid.Row="5">库存单位:</TextBlock>
+                <TextBox Margin="5" Grid.Row="5" Grid.Column="1" Text="{Binding Path=UnitsInStock}"></TextBox>
+                <TextBlock Margin="7,7,7,0" Grid.Row="6">订单单位:</TextBlock>
+                <TextBox Margin="5" Grid.Row="6" Grid.Column="1" Text="{Binding Path=UnitsOnOrder}"></TextBox>
+                <TextBlock Margin="7,7,7,0" Grid.Row="7">安全库存:</TextBlock>
+                <TextBox Margin="5" Grid.Row="7" Grid.Column="1" Text="{Binding Path=ReorderLevel}"></TextBox>
+                <TextBlock Margin="7,7,7,0" Grid.Row="8">是否报废:</TextBlock>
+                <CheckBox Grid.Row="8" Grid.Column="1" IsChecked="{Binding Path=Discontinued}"></CheckBox>
+                <Button Grid.Row="9" Grid.Column="1" Content="更新产品" Name="btn1" Click="btn1_Click"></Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

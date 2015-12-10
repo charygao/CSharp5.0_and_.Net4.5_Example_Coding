@@ -1,0 +1,13 @@
+﻿<Window x:Class="PolygonFillRuleDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="多边形填充" Height="300" Width="400">
+    <Canvas>
+        <Polygon Stroke="Black" StrokeThickness="1" Fill="Red" Canvas.Left="50" FillRule="EvenOdd"
+                                  Points="15,200 68,70 110,200 0,125 135,125">
+        </Polygon>
+        <Polygon Stroke="Black" StrokeThickness="1" Fill="Red" Canvas.Left="200" FillRule="Nonzero"
+                                  Points="15,200 68,70 110,200 0,125 135,125">
+        </Polygon>
+    </Canvas>
+</Window>

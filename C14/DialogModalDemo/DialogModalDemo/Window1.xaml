@@ -1,0 +1,13 @@
+﻿<Window x:Class="DialogModalDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button Name="btn1" HorizontalAlignment="Right" Click="btn1_Click">打开对话框窗口</Button>
+    </Grid>
+</Window>

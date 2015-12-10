@@ -1,0 +1,24 @@
+﻿<Window x:Class="MouseClickEventArgsDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--获取鼠标按键状态的StackPanel-->
+        <StackPanel Background="AliceBlue" MouseDown="MouseClickHandler" MouseUp="MouseClickHandler">           
+            <TextBlock Name="stateLabel" Text="按键状态" HorizontalAlignment="Center"></TextBlock>
+        </StackPanel>
+        <!--获取鼠标按键的StackPanel-->
+        <StackPanel Grid.Row="1" Background="AntiqueWhite" MouseDown="MouseButtonDownHandler">
+            <TextBlock Name="changedbuttonlabel" Text="当前鼠标键" HorizontalAlignment="Center"></TextBlock>
+        </StackPanel>
+        <!--获取鼠标按键计数的StackPanel-->
+        <StackPanel Grid.Row="2" Background="Aqua" MouseDown="OnMouseDownClickCount">
+            <TextBlock Name="clickcountLabel" HorizontalAlignment="Center" Text="按键计数"></TextBlock>
+        </StackPanel>           
+    </Grid>
+</Window>

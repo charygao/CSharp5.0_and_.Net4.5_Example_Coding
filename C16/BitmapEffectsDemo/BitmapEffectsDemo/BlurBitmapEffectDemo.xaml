@@ -1,0 +1,36 @@
+﻿<Window x:Class="BitmapEffectsDemo.BlurBitmapEffectDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="BlurBitmapEffect模糊效果示例" Height="300" Width="300">
+    <Window.Resources>
+        <!-- 下面的样式应用到窗口上的任何按钮 -->
+        <Style TargetType="{x:Type Button}">
+            <Style.Triggers>
+                <!-- 当按包按下时，产生模糊效果 -->
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property = "BitmapEffect" >
+                        <Setter.Value>
+                            <BlurBitmapEffect Radius="10" />
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <Button Width="200">模糊前的按钮</Button>
+        <Button  Width="200" Margin="0,10,0,10" FontSize="28">盒状模糊
+            <Button.BitmapEffect>
+                <!--使用属性元素语法为按钮应用BlurBitmapEffect盒状的模糊效果-->
+                <BlurBitmapEffect Radius="1" KernelType="Box" />
+            </Button.BitmapEffect>
+        </Button>
+        <Button  Width="200" FontSize="28">高斯模糊
+            <Button.BitmapEffect>
+                <!--使用属性元素语法为按钮应用BlurBitmapEffect高斯模糊效果-->
+                <BlurBitmapEffect Radius="1" KernelType="Gaussian" />
+            </Button.BitmapEffect>
+        </Button>
+    </StackPanel>
+
+</Window>

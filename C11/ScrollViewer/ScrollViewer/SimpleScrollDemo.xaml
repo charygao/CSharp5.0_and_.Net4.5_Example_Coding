@@ -1,0 +1,24 @@
+﻿<Window x:Class="ScrollViewer.SimpleScrollDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="SimpleScrollDemo" Height="300" Width="300">
+    <!--在窗口中放置一个ScrollViewer控件-->
+    <ScrollViewer Name="scrollViewer1">
+        <!--在ScrollViewer中放置一个Grid控件，使其高度大于ScrollViewer，也就是窗体高度-->
+        <Grid Name="grid1" Height="400">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--在Grid的每一行中放置一个按钮-->
+            <Button Name="button1">Button</Button>
+            <Button Name="button2" Grid.Row="1">Button</Button>
+            <Button Name="button3" Grid.Row="2">Button</Button>
+            <Button Name="button4" Grid.Row="3">Button</Button>
+            <Button Name="button5" Grid.Row="4">Button</Button>
+        </Grid>
+    </ScrollViewer>
+</Window>

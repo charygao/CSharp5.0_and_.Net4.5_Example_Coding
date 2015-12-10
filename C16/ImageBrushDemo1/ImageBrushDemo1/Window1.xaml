@@ -1,0 +1,15 @@
+﻿<Window x:Class="ImageBrushDemo1.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ImageBrush画刷示例" Height="300" Width="300">
+    <Grid>
+     <!--使用ImageBrush设置图片的背景色-->
+     <Button FontWeight="Bold" FontSize="16pt" FontFamily="Verdana" Content="文件夹按钮"
+     Padding="20" >
+       <Button.Background>
+           <!--使用Viewport和TileMode控制重复背景图片-->
+          <ImageBrush ImageSource="OpenPH.bmp" Viewport="0,0,0.1,0.1" Viewbox="0.5,0.5, 0.5,0.5" TileMode="Tile"/>
+       </Button.Background>
+        </Button>
+   </Grid>
+</Window>

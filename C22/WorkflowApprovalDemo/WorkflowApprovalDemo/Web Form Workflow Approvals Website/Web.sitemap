@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="~/Default.aspx" title="Home"  description="Home">
+		<siteMapNode url="~/Authenticated/Administration.aspx" title="管理"  description="管理" />
+		<siteMapNode url="~/Authenticated/EnterApprovalRequestTask.aspx" title="输入任务审核请求"  description="输入任务审核请求" />
+		<siteMapNode url="~/Authenticated/EnterResolutionTask.aspx" title="输入解决方案任务"  description="输入解决方案任务" />
+		<siteMapNode url="~/Authenticated/ManagerApprovalTask.aspx" title="管理审核任务"  description="管理审核任务" />
+		<siteMapNode url="~/Authenticated/WorkflowInstance.aspx" title="工作流实例细节"  description="工作流实例细节" />
+	</siteMapNode>
+</siteMap>

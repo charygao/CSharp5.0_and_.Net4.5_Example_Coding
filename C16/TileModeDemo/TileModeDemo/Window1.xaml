@@ -1,0 +1,47 @@
+﻿<Window x:Class="TileModeDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="TileMode示例" Height="400" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <!--TileMode=None-->
+        <Button FontWeight="Bold" FontSize="12" FontFamily="Verdana" Content="TileMode=None" Grid.Row="0" Padding="20" Margin="5" >
+            <Button.Background>
+                <ImageBrush ImageSource="OpenPH.bmp" Viewport="0,0,0.1,0.5"  TileMode="None" Stretch="None"/>
+            </Button.Background>
+        </Button>
+        <!--TileMode=Tile-->
+        <Button FontWeight="Bold" FontSize="12" FontFamily="Verdana" Content="TileMode=Tile" Grid.Row="1" Padding="20" Margin="5" >
+            <Button.Background>
+                <ImageBrush ImageSource="OpenPH.bmp" Viewport="0,0,0.1,0.5"  TileMode="Tile" Stretch="None"/>
+            </Button.Background>
+        </Button>
+        <!--TileMode=FlipX-->
+        <Button FontWeight="Bold" FontSize="12" FontFamily="Verdana" Content="TileMode=Tile" Grid.Row="2" Padding="20" Margin="5" >
+            <Button.Background>
+                <ImageBrush ImageSource="OpenPH.bmp" Viewport="0,0,0.1,0.5"  TileMode="FlipX" Stretch="None"/>
+            </Button.Background>
+        </Button>
+        <!--TileMode=FlipY-->
+        <Button FontWeight="Bold" FontSize="12" FontFamily="Verdana" Content="TileMode=FlipY" Grid.Row="3" Padding="20" Margin="5" >
+            <Button.Background>
+                <ImageBrush ImageSource="OpenPH.bmp" Viewport="0,0,0.1,0.5"  TileMode="FlipY" Stretch="None"/>
+            </Button.Background>
+        </Button>
+        <!--TileMode=FlipXY-->
+        <Button FontWeight="Bold" FontSize="12" FontFamily="Verdana" Content="TileMode=FlipXY" Grid.Row="4" Padding="20" Margin="5" >
+            <Button.Background>
+                <ImageBrush ImageSource="OpenPH.bmp" Viewport="0,0,0.1,0.5"  TileMode="FlipXY" Stretch="None"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,28 @@
+﻿<Window x:Class="ScrollViewer.ComplexScrollViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="编程控制滚动示例" Width="700">
+    <!--使用DockPanel进行整体外观布局-->
+    <DockPanel Background="Azure">
+        <TextBlock DockPanel.Dock="Top" FontSize="20" FontWeight="Bold" Margin="10" Text="ScrollViewer内容滚动方法"></TextBlock>
+        <TextBlock DockPanel.Dock="Top" Margin="10" Text="使用左边的按钮来滚动文本块的内容"></TextBlock>
+        <!--在StackPanel中垂直放置8个按钮-->
+        <StackPanel DockPanel.Dock="Left" Width="150">
+            <Button Margin="3,0,0,2" Background="White" Click="svLineUp">向上滚动</Button>
+            <Button Margin="3,0,0,2" Background="White" Click="svLineDown">向下滚动</Button>
+            <Button Margin="3,0,0,2" Background="White" Click="svLineRight">向右滚动</Button>
+            <Button Margin="3,0,0,2" Background="White" Click="svLineLeft">向左滚动</Button>
+            <Button Margin="3,0,0,2" Background="White" Click="svPageUp">向上翻页</Button>
+            <Button Margin="3,0,0,2" Background="White" Click="svPageDown">向下翻页</Button>
+            <Button Margin="3,0,0,2" Background="White" Click="svPageRight">向页翻页</Button>
+            <Button Margin="3,0,0,2" Background="White" Click="svPageLeft">向左翻页</Button>
+            <TextBlock Name="txt2" TextWrapping="Wrap"/>
+    </StackPanel>
+        <!--定义ScrollViewer，设置垂直和水平滚动条的显示方式，默认情况下，Border控件将占据DockPanel的剩余空间-->
+        <Border BorderBrush="Black" Background="White" BorderThickness="2" Height="520" Width="520" VerticalAlignment="Top">
+            <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto" Name="sv1">
+                <TextBlock TextWrapping="Wrap" Width="800" Height="1000" Name="txt1"/> 
+      </ScrollViewer>
+        </Border>
+    </DockPanel>
+</Window>

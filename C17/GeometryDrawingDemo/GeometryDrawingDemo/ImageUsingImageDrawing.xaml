@@ -1,0 +1,28 @@
+﻿<Window x:Class="GeometryDrawingDemo.ImageUsingImageDrawing"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ImageUsingImageDrawing" Height="300" Width="300">
+    <Border BorderBrush="Gray" BorderThickness="1" 
+    HorizontalAlignment="Left" VerticalAlignment="Top"
+    Margin="20">
+        <Image Stretch="None">
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <DrawingGroup>
+                            <!-- 在75,75位置处绘制100，100的图像 -->
+                            <ImageDrawing Rect="75,75,100,100" ImageSource="SL381106.jpg"/>
+                            <!-- 在0，150位置处绘制25，25的图像 -->
+                            <ImageDrawing Rect="0,150,25,25" ImageSource="InsertPictureHH.bmp"/>
+                            <!-- 在150,0位置处绘制25，25的图像 -->
+                            <ImageDrawing Rect="150,0,25,25" ImageSource="MoveToFolderHH.bmp"/>
+                            <!-- 在位置0，0处绘置75，75的图形 -->
+                            <ImageDrawing Rect="0,0,75,75" ImageSource="MultiplePagesHH.bmp"/>
+                        </DrawingGroup>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+            </Image.Source>
+        </Image>
+    </Border>
+
+</Window>

@@ -1,0 +1,60 @@
+﻿<Window x:Class="HeaderedContentControlDemo.ExpanderDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="可折叠面板示例" Height="300" Width="300">
+    <Grid>
+        <!--定义三行，每行放置一个Expander控件-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--设置第一个的IsExpanded属性为True,默认展开该Expander，ExpandDirection指定展开的方向-->
+        <Expander Header="WPF知识点选择" Name="expander1" Background="AliceBlue" IsExpanded="True" ExpandDirection="Down" Expanded="expander1_Expanded" Collapsed="expander1_Collapsed">
+            <StackPanel Name="stackPanel2" Margin="15">
+                <CheckBox Name="cb1">WPF程序设计指南</CheckBox>
+                <CheckBox Name="cb2">XAML可扩展应用程序标记语言详解</CheckBox>
+                <CheckBox Name="cb3">使用WPF开发企业级应用程序</CheckBox>
+                <CheckBox Name="cb4">在WPF中创建灵活可维护的用户界面</CheckBox>
+            </StackPanel>
+        </Expander>
+        <!--定义第二个Expander控件-->
+        <Expander Grid.Row="1" Header="Expander控件简介" Name="expander2" Background="Aqua">
+            <TextBlock TextWrapping="Wrap" Text="熟悉Outlook的用户可能会对其左侧的可折叠面板印象深刻，
+                       Expander完成了类似的工作，该控件显示一个标题按钮，
+                       点击该按钮允许用户展开和折叠的其内容"></TextBlock>
+        </Expander>
+        <!--在第三个控件中，放置两个按钮来操作数据库-->
+        <Expander Grid.Row="2" Name="expander3">
+            <Expander.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="ActualSizeHS.png" Stretch="None"></Image>
+                    <TextBlock Text="数据库操作"></TextBlock>                    
+                </StackPanel>
+            </Expander.Header>
+            <!--定义两行的Grid,用于放置按钮-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button>
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="RelationshipsHS.png"></Image>
+                            <TextBlock Text="显示关系图"></TextBlock>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Grid.Row="1">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="AddTableHS.png"></Image>
+                            <TextBlock Text="添加表"></TextBlock>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </Grid>            
+        </Expander>
+    </Grid>
+</Window>

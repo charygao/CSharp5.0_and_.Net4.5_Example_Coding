@@ -1,0 +1,28 @@
+﻿<Window x:Class="FontSizeResourceDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="clr-namespace:System;assembly=mscorlib"
+    Title="Window1" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--定义Grid级别的资源-->
+        <Grid.Resources>
+            <s:Double x:Key="LargeSize">30</s:Double>
+            <s:Double x:Key="SmallSize">10</s:Double>
+        </Grid.Resources>
+        <!--使用资源的TextBlock-->
+        <TextBlock Text="小字体的TextBlock">
+            <TextBlock.FontSize>
+                <StaticResource ResourceKey="SmallSize"></StaticResource>
+            </TextBlock.FontSize>
+        </TextBlock>
+        <TextBlock Text="大字体的TextBlock" Grid.Row="1">
+            <TextBlock.FontSize>
+                <StaticResource ResourceKey="LargeSize"></StaticResource>
+            </TextBlock.FontSize>
+        </TextBlock>
+    </Grid>
+</Window>

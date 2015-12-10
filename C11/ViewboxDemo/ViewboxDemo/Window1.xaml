@@ -1,0 +1,42 @@
+﻿<Window x:Class="ViewboxDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <Viewbox Stretch="Fill">
+    <Grid>
+        <Canvas Height="200" Width="200">
+    <!-- 绘制一个完全蓝色的椭圆 -->
+   <Ellipse
+    Width="100"
+    Height="50"
+    Fill="Blue"
+    Canvas.Left="10"
+    Canvas.Top="25" />
+   <!-- 具有黑色边框的椭圆 -->
+    <Ellipse
+    Width="100"
+    Height="50"
+    Fill="Blue"
+    Stroke="Black"
+    StrokeThickness="4"
+    Canvas.Left="10"
+    Canvas.Top="100"/>
+    <!-- 蓝色椭圆-->
+    <Ellipse
+    Width="50"
+    Height="50"
+    Fill="Blue"
+    Canvas.Left="135"
+    Canvas.Top="25"/>
+    <!--无填充椭圆-->
+    <Ellipse
+    Width="50"
+    Height="50"
+    Stroke="Black"
+    StrokeThickness="4"
+    Canvas.Left="135"
+    Canvas.Top="100" />
+    </Canvas>
+    </Grid>
+        </Viewbox>
+</Window>

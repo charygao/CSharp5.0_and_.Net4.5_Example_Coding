@@ -1,0 +1,23 @@
+﻿<Window x:Class="MultiSelectedListBox.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="多选ListBox控件" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--定义一个允许多选的ListBox控件-->
+        <ListBox Name="lbl" SelectionMode="Multiple">
+            <ListBoxItem>WPF实例指南</ListBoxItem>
+            <ListBoxItem>WPF开发详解</ListBoxItem>
+            <ListBoxItem>WPF企业级应用开发指南</ListBoxItem>
+            <ListBoxItem>WPF性能优化指南</ListBoxItem>
+        </ListBox>
+        <!--定义显示结果的按钮和文本框-->
+        <StackPanel Grid.Row="1">
+            <Button Click="Button_Click">显示当前ListBox中的选择项</Button>
+            <TextBox Name="txt"></TextBox>
+        </StackPanel>
+    </Grid>
+</Window>

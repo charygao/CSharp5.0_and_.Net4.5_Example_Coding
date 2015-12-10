@@ -1,0 +1,14 @@
+﻿<Window x:Class="BindingToElementDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="绑定到元素示例" Height="300" Width="300">
+    <StackPanel>
+        <!--绑定来源 -->
+        <ScrollBar Name="scroll"
+               Orientation="Horizontal" Margin="24" 
+               Maximum="100" LargeChange="10" SmallChange="1" />
+        <!-- 绑定目标 -->
+        <Label HorizontalAlignment="Center" Name="scrollfontsize"
+           Content="{Binding ElementName=scroll, Path=Value,Mode=TwoWay}" FontSize="30" />       
+    </StackPanel>
+</Window>

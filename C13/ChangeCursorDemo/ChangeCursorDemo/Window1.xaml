@@ -1,0 +1,58 @@
+﻿<Window x:Class="ChangeCursorDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="更改鼠标光标示例2" Height="450" Width="600">
+    <StackPanel>
+        <Border Width="300">
+            <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                <StackPanel Margin="10">
+                    <Label HorizontalAlignment="Left">鼠标光标类型</Label>
+                    <!-- 用户可以在ComboBox控件中选择不同的光标类型 -->
+                    <ComboBox Width="100"
+                  SelectionChanged="CursorTypeChanged"
+                  HorizontalAlignment="Left"
+                  Name="CursorSelector">
+                        <ComboBoxItem Content="AppStarting" />
+                        <ComboBoxItem Content="ArrowCD" />
+                        <ComboBoxItem Content="Arrow" />
+                        <ComboBoxItem Content="Cross" />
+                        <ComboBoxItem Content="HandCursor" />
+                        <ComboBoxItem Content="Help" />
+                        <ComboBoxItem Content="IBeam" />
+                        <ComboBoxItem Content="No" />
+                        <ComboBoxItem Content="None" />
+                        <ComboBoxItem Content="Pen" />
+                        <ComboBoxItem Content="ScrollSE" />
+                        <ComboBoxItem Content="ScrollWE" />
+                        <ComboBoxItem Content="SizeAll" />
+                        <ComboBoxItem Content="SizeNESW" />
+                        <ComboBoxItem Content="SizeNS" />
+                        <ComboBoxItem Content="SizeNWSE" />
+                        <ComboBoxItem Content="SizeWE" />
+                        <ComboBoxItem Content="UpArrow" />
+                        <ComboBoxItem Content="WaitCursor" />
+                        <ComboBoxItem Content="Custom" />
+                    </ComboBox>
+                </StackPanel>
+               <!--用户可以单击单选框来指定光标的范围-->
+                <StackPanel Margin="10">
+                    <Label HorizontalAlignment="Left">鼠标光标范围</Label>
+                    <StackPanel>
+                        <RadioButton Name="rbScopeElement" IsChecked="True"
+                       Checked="CursorScopeSelected">仅显示区域</RadioButton>
+                        <RadioButton Name="rbScopeApplication"
+                       Checked="CursorScopeSelected">整个应用程序</RadioButton>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <!-- 当鼠标指针经过Border控件时，所选择的光标将会显示出来-->        
+        <Border Name="DisplayArea" Height="250" Width="400"
+          Margin="20" Background="AliceBlue">
+            <Label HorizontalAlignment="Center">
+                移动鼠标指定到此区域
+            </Label>
+        </Border>
+    </StackPanel>
+</Window>

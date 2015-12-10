@@ -1,0 +1,26 @@
+﻿<Window x:Class="UnderstandingDP.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="理解依赖属性示例" Height="300" Width="300" SizeToContent="WidthAndHeight">     
+    <!--定义一个5行的Grid-->
+        <Grid Name="grid1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Name="txt" Text="点击下面的按钮来改变字体，FontSize是一个依赖属性" TextWrapping="Wrap"></TextBlock>
+            <Button Name="button2" Grid.Row="1">Button</Button>
+            <Button Name="button3" Grid.Row="2">Button</Button>
+            <Button Name="button4" Grid.Row="3">Button</Button>
+            <Button Name="button5" Grid.Row="4">Button</Button>
+            <!--这两个水平排列的按钮将改变字体-->
+            <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Center">
+                <Button Name="btnWindowSize" Margin="5" Click="btnWindowSize_Click">改变窗口字体大小</Button>
+                <Button Name="btnButtonSize" Margin="5" Click="btnButtonSize_Click">改变文本块字体大小</Button>
+            </StackPanel>
+        </Grid>
+</Window>

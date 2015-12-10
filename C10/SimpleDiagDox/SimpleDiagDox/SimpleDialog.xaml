@@ -1,0 +1,14 @@
+﻿<Window x:Class="SimpleDiagDox.SimpleDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="简单对话框示例" Height="300" Width="300">
+    <Grid>
+        <DockPanel Name="dockPanel1">
+            <StackPanel Name="stackPanel1" Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Bottom">
+                <Button Name="button1" Margin="10,10,2,10" Padding="3" Click="button1_Click" IsDefault="True">确定</Button>
+                <Button Name="button2" Margin="2,10,10,10" Padding="3" IsCancel="True">取消</Button>
+            </StackPanel>
+            <TextBlock Name="textBlock1" Margin="10" Text="简单对话框示例，按请单击确定返回。" />
+        </DockPanel>
+    </Grid>
+</Window>

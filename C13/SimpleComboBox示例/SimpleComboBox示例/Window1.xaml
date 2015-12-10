@@ -1,0 +1,21 @@
+﻿<Window x:Class="SimpleComboBox示例.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="简单的ComboBox示例" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Label>选择书籍：</Label>
+                <ComboBox Name="cb" SelectedIndex="0" DropDownOpened="ComboBox_DropDownOpened" DropDownClosed="ComboBox_DropDownClosed">
+                <ComboBoxItem>WPF实例指南</ComboBoxItem>
+                <ComboBoxItem>WPF企业级应用开发指南</ComboBoxItem>
+                <ComboBoxItem>WPF开发详解</ComboBoxItem>
+                <ComboBoxItem>WPF性能优化指南</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <TextBox Name="txt" Grid.Row="1"></TextBox>
+    </Grid>
+</Window>

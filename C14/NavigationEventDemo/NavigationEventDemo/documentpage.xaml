@@ -1,0 +1,44 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    Title="DocumentPage"
+    >
+  <ScrollViewer>
+    <StackPanel>
+      <TextBlock Name="Paragraph1" TextWrapping="Wrap">
+        <Bold>Navigating</Bold>
+        <LineBreak></LineBreak>
+        当前求新的导航时，但导航开始之前引发该事件，当调用Navigate方法或调用GoBack、GoForward方法时，此时可以取消掉导航过程。
+      </TextBlock>
+      <TextBlock Name="Paragraph2" TextWrapping="Wrap">
+        <Bold>Navigated</Bold>
+        <LineBreak></LineBreak>
+        当导航开始时，目标内容己经找到并可以获取导航内容时触发，无论是否加载完目标导航内容。
+      </TextBlock>
+      <TextBlock Name="Paragraph3" TextWrapping="Wrap">
+        <Bold>NavigationProgress</Bold>
+        <LineBreak></LineBreak>
+        在下载过程中定期发生，以提供导航进度信息，该方法可以提供己下载数量和总共所需下载的数量，每接收到1KB数据时触发一次。
+      </TextBlock>
+      <TextBlock Name="Paragraph4" TextWrapping="Wrap">
+        <Bold>NavigationFailed</Bold>
+        <LineBreak></LineBreak>
+        在导航到所请求内容出错时发生，此时，页面己经被分析，但是Initialized和Loaded事件还没有被触发。
+      </TextBlock>
+      <TextBlock Name="Paragraph5" TextWrapping="Wrap">
+        <Bold>NavigationStopped</Bold>
+        <LineBreak></LineBreak>
+        在调用StopLoading方法时发生，或者在一个当前导航正在进行过程中又请求一个新导航时发生。
+      </TextBlock>
+      <TextBlock Name="Paragraph6" TextWrapping="Wrap">
+        <Bold>LoadCompleted</Bold>
+        <LineBreak></LineBreak>
+        当已加载、分析并开始呈现目标导航内容时发生。
+      </TextBlock>
+      <TextBlock Name="Paragraph7" TextWrapping="Wrap">
+        <Bold>FragmentNavigation</Bold>
+        <LineBreak></LineBreak>
+        当向某个内容片段的导航开始时发生，如果所需片段位于当前内容中，它会立即发生；或者，如果所需片段位于不同内容中，它会在加载了源 XAML 内容之后发生。
+      </TextBlock>      
+    </StackPanel>
+  </ScrollViewer>
+</Page>

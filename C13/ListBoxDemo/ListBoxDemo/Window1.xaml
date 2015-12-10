@@ -1,0 +1,49 @@
+﻿<Window x:Class="ListBoxDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ListBox示例" Height="300" Width="300" SizeToContent="Height">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <ListBox Name="lbl1" SelectionChanged="ListBox_SelectionChanged">
+                <ListBoxItem>WPF实例指南</ListBoxItem>
+                <ListBoxItem>WPF开发详解</ListBoxItem>
+                <ListBoxItem>WPF企业级应用开发指南</ListBoxItem>
+                <ListBoxItem>WPF性能优化指南</ListBoxItem>
+            </ListBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <ListBox Name="lst" SelectionChanged="ListBox_SelectionChanged_1">
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="InsertPictureHH.bmp"></Image>
+                        <TextBlock TextDecorations="UnderLine" FontSize="15" VerticalAlignment="Bottom">WPF实例指南</TextBlock>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="OpenPH.bmp"></Image>
+                        <TextBlock TextDecorations="UnderLine" FontSize="15" VerticalAlignment="Bottom">WPF开发详解</TextBlock>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="MultiplePagesHH.bmp"></Image>
+                        <TextBlock TextDecorations="UnderLine" FontSize="15" VerticalAlignment="Bottom">WPF企业级应用开发指南</TextBlock>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="PropertiesHH.bmp"></Image>
+                        <TextBlock TextDecorations="OverLine" FontSize="15" VerticalAlignment="Bottom">WPF性能优化指南</TextBlock>
+                    </StackPanel>
+                </ListBoxItem>
+            </ListBox>
+        </StackPanel>
+        <Button Grid.Row="2" Click="Button_Click">显示第2行的内容</Button>
+    </Grid>
+</Window>

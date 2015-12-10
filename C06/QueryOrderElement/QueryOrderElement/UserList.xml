@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UserList>
+  <Count>4</Count>
+  <User Name="张三" Age="23">
+    <Sex>Male</Sex>
+    <Mobile>13012345678</Mobile>
+  </User>
+  <User Name="李四" Age="20">
+    <Sex>Male</Sex>
+    <Mobile>13022345679</Mobile>
+  </User>
+  <User Name="李敏" Age="18">
+    <Sex>Female</Sex>
+    <Mobile>13323445678</Mobile>
+  </User>
+  <User Name="王霞" Age="22">
+    <Sex>Female</Sex>
+    <Mobile>13613344678</Mobile>
+  </User>
+</UserList>
+

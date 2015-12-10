@@ -1,0 +1,71 @@
+﻿<Window x:Class="TemplateTriggerDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="模板触发器示例" Height="300" Width="300">
+    <Window.Resources>
+        <!--定义控件模板-->
+        <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type Button}">
+            <!--为Border控件批定一个名称，以便于Triggers集合中的Trigger能够指定的要变更属性的目标对象-->
+            <Border Name="Border" BorderBrush="{TemplateBinding Button.Foreground}" 
+                    BorderThickness="{TemplateBinding Button.BorderThickness}" 
+                    CornerRadius="2" Background="{TemplateBinding Button.Background}" 
+                    TextBlock.Foreground="{TemplateBinding Button.Foreground}" 
+                    Margin="{TemplateBinding Button.Padding}">
+                <Grid>
+                    <!--定义一个模拟焦点的矩形，使其外边框显示虚线，默认情况下隐藏显示-->
+                    <Rectangle Name="FocusCue" Visibility="Hidden" Stroke="Black"
+                                        StrokeThickness="1" StrokeDashArray="1 2"
+                                        SnapsToDevicePixels="True" ></Rectangle>
+                <!--使用ContentPresenter指定内容属性-->
+                <ContentPresenter RecognizesAccessKey="True" 
+                              HorizontalAlignment="{TemplateBinding Button.HorizontalAlignment}" 
+                              VerticalAlignment="{TemplateBinding VerticalAlignment}" ></ContentPresenter>
+               </Grid>                    
+            </Border>
+            <!--使用ControlTamplate.Triggers集合为模板定义两个触发器-->
+            <ControlTemplate.Triggers>
+                <!--当按钮的IsMouseOver属性为True时，设置Border的背景色-->
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="Border" Property="Background" Value="DarkRed" />
+                </Trigger>
+                <!--当按钮的IsPressed属性为True时，同时设置Border的背景和边框色-->
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="Border" Property="Background" Value="IndianRed" />
+                    <Setter TargetName="Border" Property="BorderBrush" Value="DarkKhaki" />
+                </Trigger>
+                <!--定义IsKeyboardFocused属性触发器，当获取焦点时，使矩形显示出来-->
+                <Trigger Property="IsKeyboardFocused" Value="True">
+                    <Setter TargetName="FocusCue" Property="Visibility" Value="Visible" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Button FontSize="15" HorizontalAlignment="Center">
+            <Button.Template>
+                <ControlTemplate>
+                    <!--定义控件视觉树-->
+                    <Grid>
+                        <!--定义一个矩形作为按钮的外观-->
+                        <Rectangle Fill='Red' RadiusX="5" RadiusY="5"/>
+                        <!--定义按钮内容文本显示-->
+                        <TextBlock Name="txtBlock" Margin="{TemplateBinding Button.Padding}" VerticalAlignment="Center"  HorizontalAlignment="Center"  Text="{TemplateBinding Button.Content}" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+            使用模板自定义按钮
+        </Button>
+        <!--使用在资源中定义的ButtonTemplate模板-->
+        <Button Name="btn2" Content="使用资源定义按钮" 
+                Grid.Row="1" 
+                Template="{StaticResource ButtonTemplate}" 
+                HorizontalAlignment="Center" 
+                Padding="20" 
+                Foreground="Blue" 
+                Background="Yellow" FontSize="20"></Button>
+    </Grid>
+</Window>

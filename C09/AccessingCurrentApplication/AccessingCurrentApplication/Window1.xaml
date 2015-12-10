@@ -1,0 +1,21 @@
+﻿<!--定义一个窗口激活的Activated事件处理器-->
+<Window x:Class="AccessingCurrentApplication.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300"       
+    Activated="MainWindow_Activated">
+    <!--StackPanel是一种堆叠面板，默认情况下，控件将垂直方向一个跟着一个排列显示-->
+ <StackPanel>
+     <!--添加Menu控件，并指定Menu菜单项-->
+    <Menu>
+      <MenuItem Header="文件">
+        <MenuItem Name="newWindowMenuItem" Click="newWindowMenuItem_Click" Header="新建窗口"></MenuItem>
+        <Separator></Separator>
+        <MenuItem Name="exitMenuItem" Click="exitMenuItem_Click"  Header="退出"></MenuItem>
+      </MenuItem>
+        <!--当窗体激活时，将使用程序代码为其动态添加菜单项，添加窗体的标题-->
+      <MenuItem Name="windowMenuItem" Header="窗口">
+      </MenuItem>
+    </Menu>
+  </StackPanel>
+</Window>

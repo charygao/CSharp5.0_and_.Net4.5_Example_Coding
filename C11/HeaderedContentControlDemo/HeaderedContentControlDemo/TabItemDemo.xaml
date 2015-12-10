@@ -1,0 +1,34 @@
+﻿<Window x:Class="HeaderedContentControlDemo.TabItemDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="TabItemDemo" Height="300" Width="300">
+    <Grid>
+        <!--定义一个TabControl控件，将在其中放置TabItem控件-->
+        <TabControl Name="tabControl1">
+            <!--第一个TabItem控件显示一些复选框-->
+            <TabItem Header="WPF书籍">
+                <StackPanel Name="stackPanel2" Margin="15">
+                    <CheckBox Name="cb1">WPF程序设计指南</CheckBox>
+                    <CheckBox Name="cb2">XAML可扩展应用程序标记语言详解</CheckBox>
+                    <CheckBox Name="cb3">使用WPF开发企业级应用程序</CheckBox>
+                    <CheckBox Name="cb4">在WPF中创建灵活可维护的用户界面</CheckBox>
+                </StackPanel>
+            </TabItem>
+            <!--第二个标签页显示一些单选框，这里使用属性元素语法定义了标题，并将IsSelected设置为True启动时将显示这一页-->
+            <TabItem IsSelected="True">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="RelationshipsHS.png" Stretch="None"></Image>
+                        <TextBlock Text="Silverlight书籍" ></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <StackPanel Name="stackPanel1" Margin="15">
+                    <RadioButton Name="radioButton1">WPF程序设计指南</RadioButton>
+                    <RadioButton Name="radioButton2">XAML可扩展应用程序标记语言详解</RadioButton>
+                    <RadioButton Name="radioButton3">使用WPF开发企业级应用程序</RadioButton>
+                    <RadioButton Name="radioButton4">在WPF中创建灵活可维护的用户界面</RadioButton>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

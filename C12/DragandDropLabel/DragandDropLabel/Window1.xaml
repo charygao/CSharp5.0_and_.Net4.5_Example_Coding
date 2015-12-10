@@ -1,0 +1,13 @@
+﻿<Window x:Class="DragandDropLabel.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="简单的拖放编程示例" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Margin="62,48,96,55" Background="AliceBlue" Name="lbl" MouseLeftButtonDown="lbl_MouseLeftButtonDown">选中这里开始拖放</Label>
+        <TextBox AllowDrop="True" TextWrapping="Wrap" Name="txt" Grid.Row="1" Background="Aqua" DragEnter="txt_DragEnter" Drop="txt_Drop"></TextBox>
+    </Grid>
+</Window>

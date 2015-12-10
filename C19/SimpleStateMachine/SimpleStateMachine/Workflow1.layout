@@ -1,0 +1,45 @@
+﻿<StateMachineWorkflowDesigner xmlns:ns0="clr-namespace:System.Drawing;Assembly=System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Size="881, 510" AutoSizeMargin="16, 24" Location="30, 30" Name="Workflow1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateMachineWorkflowDesigner.DesignerConnectors>
+		<StateDesignerConnector TargetActivity="State1" TargetConnectionEdge="Top" SetStateName="setStateActivity1" SourceActivity="StartState" TargetConnectionIndex="0" SourceStateName="StartState" SourceConnectionEdge="Right" EventHandlerName="eventDrivenActivity1" SourceConnectionIndex="0" TargetStateName="State1">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="218" Y="115" />
+				<ns0:Point X="368" Y="115" />
+				<ns0:Point X="368" Y="167" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetActivity="CompleteState" TargetConnectionEdge="Top" SetStateName="setStateActivity2" SourceActivity="State1" TargetConnectionIndex="0" SourceStateName="State1" SourceConnectionEdge="Right" EventHandlerName="eventDrivenActivity2" SourceConnectionIndex="0" TargetStateName="CompleteState">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="449" Y="211" />
+				<ns0:Point X="463" Y="211" />
+				<ns0:Point X="463" Y="260" />
+				<ns0:Point X="135" Y="260" />
+				<ns0:Point X="135" Y="272" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+	</StateMachineWorkflowDesigner.DesignerConnectors>
+	<StateMachineWorkflowDesigner.Designers>
+		<StateDesigner Size="172, 80" AutoSizeMargin="16, 24" Location="51, 71" Name="StartState">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Name="eventDrivenActivity1" Size="150, 266" Location="59, 104">
+					<EventDrivenDesigner.Designers>
+						<DelayDesigner Name="delayActivity1" Size="130, 41" Location="69, 169" />
+						<CodeDesigner Name="codeActivity1" Size="130, 41" Location="69, 229" />
+						<SetStateDesigner Name="setStateActivity1" Size="130, 62" Location="69, 289" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Size="172, 80" AutoSizeMargin="16, 24" AutoSize="False" Location="282, 167" Name="State1">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Name="eventDrivenActivity2" Size="150, 266" Location="290, 200">
+					<EventDrivenDesigner.Designers>
+						<DelayDesigner Name="delayActivity2" Size="130, 41" Location="300, 265" />
+						<CodeDesigner Name="codeActivity2" Size="130, 41" Location="300, 325" />
+						<SetStateDesigner Name="setStateActivity2" Size="130, 62" Location="300, 385" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Size="160, 80" AutoSizeMargin="16, 24" Location="55, 272" Name="CompleteState" />
+	</StateMachineWorkflowDesigner.Designers>
+</StateMachineWorkflowDesigner>

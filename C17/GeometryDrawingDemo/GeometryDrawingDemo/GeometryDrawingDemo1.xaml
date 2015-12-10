@@ -1,0 +1,32 @@
+﻿<Window x:Class="GeometryDrawingDemo.GeometryDrawingDemo1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="GeometryDrawing演示" Height="300" Width="300">
+    <Grid>
+        <Button Name="btn1" Content="演示GeometryDrawing">
+            <Button.Background>
+                <!--在按钮的背景上绘制图形-->
+                <DrawingBrush>
+                    <!--使用DrawingBrush显示图形-->
+                    <DrawingBrush.Drawing>
+                        <!--指定GeoetryDrawing的画刷和笔形-->
+                        <GeometryDrawing Brush="Yellow">
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="Blue" Thickness="3"></Pen>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Geometry>
+                                <!--使用PathGeometry绘制三角形-->
+                                <PathGeometry>
+                                    <PathFigure IsClosed="True" StartPoint="10,100">
+                                        <LineSegment Point="100,100" />
+                                        <LineSegment Point="100,50" />
+                                    </PathFigure>
+                                </PathGeometry>
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

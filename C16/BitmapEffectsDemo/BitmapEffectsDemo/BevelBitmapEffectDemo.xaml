@@ -1,0 +1,72 @@
+﻿<Window x:Class="BitmapEffectsDemo.BevelBitmapEffectDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="BevelBitmapEffect演示效果" Height="600" Width="500">
+    <Window.Resources>
+        <!-- 应用窗口上的Button按钮 -->
+        <Style TargetType="{x:Type Button}">
+            <Style.Triggers>
+                <!-- 当鼠标经过时，应用BevelBitmapEffect位图效果 -->
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="BitmapEffect" >
+                        <Setter.Value>
+                            <BevelBitmapEffect BevelWidth="15" />
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <!-- 当鼠标按下按钮时，应用BevelBitmapEffect位图效果 -->
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property="BitmapEffect" >
+                        <Setter.Value>
+                            <BevelBitmapEffect BevelWidth="5" />
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Button Width="200" Height="80" Margin="10" FontSize="18">
+            凹凸效果的按钮
+            <Button.BitmapEffect>
+                <BevelBitmapEffect BevelWidth="15" EdgeProfile="CurvedIn" LightAngle="320" Relief="0.4" Smoothness="0.4" />
+            </Button.BitmapEffect>
+        </Button>
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+            <Button Width="200" Height="80" Margin="10" FontSize="16" >
+                EdgeProfile=BulgedUp
+                <Button.BitmapEffect>
+                    <BevelBitmapEffect BevelWidth="15" EdgeProfile="BulgedUp" LightAngle="320" Relief="0.4" Smoothness="0.4" />
+                </Button.BitmapEffect>
+            </Button>
+            <Button Width="200" Height="80" Margin="10" FontSize="16" >
+                EdgeProfile=CurvedIn
+                <Button.BitmapEffect>
+                    <BevelBitmapEffect BevelWidth="15" EdgeProfile="CurvedIn" LightAngle="320" Relief="0.4" Smoothness="0.4" />
+                </Button.BitmapEffect>
+            </Button>
+             </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Width="200" Height="80" Margin="10" FontSize="16" >
+                    EdgeProfile=CurvedOut
+                    <Button.BitmapEffect>
+                        <BevelBitmapEffect BevelWidth="15" EdgeProfile="CurvedOut" LightAngle="320" Relief="0.4" Smoothness="0.4" />
+                    </Button.BitmapEffect>
+                </Button>
+                <Button Width="200" Height="80" Margin="10" FontSize="16" >
+                    EdgeProfile=Linear
+                    <Button.BitmapEffect>
+                        <BevelBitmapEffect BevelWidth="15" EdgeProfile="Linear" LightAngle="320" Relief="0.4" Smoothness="0.4" />
+                    </Button.BitmapEffect>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <Button Name="btn3" Grid.Row="2" Height="80" Margin="20" Background="Green">应用样式</Button>
+    </Grid>
+</Window>

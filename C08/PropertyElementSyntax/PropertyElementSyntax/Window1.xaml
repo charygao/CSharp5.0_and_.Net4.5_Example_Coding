@@ -1,0 +1,30 @@
+﻿<Window x:Class="PropertyElementSyntax.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <!--使用属性元素语法设置单色背景-->
+    <Window.Background>
+        <SolidColorBrush>
+            Red
+        </SolidColorBrush>
+    </Window.Background>
+    <!--使用属性元素语法为Grid设置渐变背景色-->
+    <Grid Name="grid1">
+        <Grid.Background>
+            <LinearGradientBrush>
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Offset="0.00" Color="Red" />
+                    <GradientStop Offset="0.50" Color="Indigo" />
+                    <GradientStop Offset="1.00" Color="Violet" />
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <!--使用属性语法设置标记扩展
+        <Button Content="点这里查看详细信息" Foreground="{x:Static SystemColors.ActiveCaptionBrush}"></Button>-->
+        <Button Content="点这里查看详细信息">
+            <Button.Foreground>
+                <x:Static Member="SystemColors.ActiveCaptionBrush"></x:Static>
+            </Button.Foreground>
+        </Button>
+    </Grid>
+</Window>

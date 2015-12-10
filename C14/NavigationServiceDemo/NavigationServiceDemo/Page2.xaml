@@ -1,0 +1,8 @@
+﻿<Page x:Class="NavigationServiceDemo.Page2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Page2">
+    <Grid>
+        <TextBlock FontSize="20">这是第二页</TextBlock>
+    </Grid>
+</Page>

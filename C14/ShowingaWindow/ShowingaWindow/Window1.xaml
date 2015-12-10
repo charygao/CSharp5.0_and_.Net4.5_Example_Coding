@@ -1,0 +1,16 @@
+﻿<Window x:Class="ShowingaWindow.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="显示模式与非模式窗口" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition  Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBox Name="txt"></TextBox>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
+            <Button Name="btnmodel" Content="模式窗口" Margin="10" Click="btnmodel_Click"></Button>
+            <Button Name="btnmodeless" Content="非模式窗口" Margin="10" Click="btnmodeless_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

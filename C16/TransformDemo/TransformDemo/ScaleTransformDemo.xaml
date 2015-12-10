@@ -1,0 +1,32 @@
+﻿<Window x:Class="TransformDemo.ScaleTransformDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="缩放变换示例程序" Height="450" Width="400">
+    <Canvas>
+        <!--原始矩形-->
+        <TextBlock Canvas.Top="30" Text="原始矩形"></TextBlock>
+        <Rectangle x:Name="Rec1" Canvas.Left="0" Canvas.Top="50" Width="100" Height="100" Fill="Red">
+        </Rectangle>
+        <!--垂直放大2倍-->
+        <TextBlock Canvas.Top="180" Canvas.Left="10" Text="Y轴放大2倍"></TextBlock>
+        <Rectangle x:Name="Rec2" Canvas.Left="0" Canvas.Top="200" Width="100" Height="100" Fill="Red">
+            <Rectangle.RenderTransform>
+                <ScaleTransform ScaleY="2"></ScaleTransform>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <!--水平放大2倍-->
+        <TextBlock Canvas.Top="180" Canvas.Left="150" Text="X轴放大2倍"></TextBlock>
+        <Rectangle x:Name="Rec3" Canvas.Left="150" Canvas.Top="200" Width="100" Height="100" Fill="Red">
+            <Rectangle.RenderTransform>
+                <ScaleTransform ScaleX="2"></ScaleTransform>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <!--水平和垂直缩小，并指定中心点-->
+        <TextBlock Canvas.Top="30" Canvas.Left="150" Text="X轴和Y轴各自缩小2倍"></TextBlock>
+        <Rectangle x:Name="Rec4" Canvas.Left="150" Canvas.Top="50" Width="100" Height="100" Fill="Red">
+            <Rectangle.RenderTransform>
+                <ScaleTransform ScaleX="0.5" ScaleY="0.5" CenterX="50" CenterY="50"></ScaleTransform>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+    </Canvas>
+</Window>

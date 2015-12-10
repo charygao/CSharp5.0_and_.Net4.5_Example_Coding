@@ -1,0 +1,12 @@
+﻿<Window x:Class="LatBox.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:LatBox" 
+    Title="LatBox" Height="300" Width="300"
+    >
+  <StackPanel>
+    <local:CoordinateBox x:Name="cb1"/>
+      <!--将该控件的Value各性绑定到上一个用户控件的Value属性中。-->
+    <local:CoordinateBox x:Name="cb2" Value="{Binding ElementName=cb1, Path=Value}"/>
+  </StackPanel>
+</Window>

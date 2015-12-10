@@ -1,0 +1,16 @@
+﻿<Window x:Class="CanvasDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Canvas使用示例" Height="200" Width="300">
+    <Canvas Name="canvas1">
+        <TextBox Canvas.Left="90" Canvas.Top="10" Height="23" Name="txtName" Width="120" />
+        <Label Canvas.Left="10" Canvas.Top="10" Height="28" Name="lblName" Width="82">请输入姓名：</Label>
+        <Label Canvas.Left="10" Canvas.Top="42" Height="28" Name="lblgender" Width="82">请选择性别：</Label>
+        <ComboBox Canvas.Left="90" Canvas.Top="42" Height="23" Name="cbgender" Width="120" SelectedIndex="0">
+            <ComboBoxItem>男</ComboBoxItem>
+            <ComboBoxItem>女</ComboBoxItem>
+        </ComboBox>
+        <Button Canvas.Left="54" Canvas.Top="95" Height="23" Name="button1" Width="75" Canvas.ZIndex="2">确定</Button>
+        <Button Canvas.Left="158" Canvas.Top="95" Height="23" Name="button2" Width="75" Canvas.ZIndex="1">取消</Button>
+    </Canvas>
+</Window>

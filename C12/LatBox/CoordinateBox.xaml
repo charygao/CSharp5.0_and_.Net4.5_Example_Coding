@@ -1,0 +1,22 @@
+<UserControl x:Class="LatBox.CoordinateBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Grid>
+      <!--定义2行2列，使用标记扩展绑定到TextBox的高度属性-->
+    <Grid.RowDefinitions>
+      <RowDefinition Height="{Binding ElementName=Lat, Path=Height}"/>
+      <RowDefinition Height="{Binding ElementName=Lon, Path=Height}"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <!--将列宽绑定到TextBlock的宽度-->
+      <ColumnDefinition Width="{Binding ElementName=tbLon, Path=Width}"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+      <!--在1行的1列和2列各放一个TextBlock和TextBox控件-->
+    <TextBlock>请输入纬度值</TextBlock>
+    <TextBox Name="Lat" Grid.Column="1" TextChanged="onTextChanged"/>
+        <!--在2行的1列和2列各放一个TextBlock和TextBox控件-->
+        <TextBlock Grid.Row="1" Name="tbLon">请输入经度值</TextBlock>
+    <TextBox Name="Lon" Grid.Column="1"  Grid.Row="1" TextChanged="onTextChanged" />
+  </Grid>
+</UserControl>

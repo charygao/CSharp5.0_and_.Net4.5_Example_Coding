@@ -1,0 +1,57 @@
+﻿<Window x:Class="SharpedWindow.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300" 
+    AllowsTransparency="True" Background="Transparent" WindowStyle="None">
+    <!--为了创建非矩形窗口，需要先使用上面的三个属性将标准的呈现外观进行隐藏-->
+    <!--下面的示例使用Border控件创建了一个圆角的边框-->
+    <Border Width="Auto" Height="Auto" Name="windowFrame"
+                         BorderBrush="Blue" BorderThickness="1"
+                         CornerRadius="20,20,20,20" >
+        <!--为Border控件填允渐变色-->
+        <Border.Background>
+            <LinearGradientBrush>
+                <GradientBrush.GradientStops>
+                    <GradientStopCollection>
+                        <GradientStop Color="White" Offset="0.0"/>
+                        <GradientStop Color="#CEE3FF" Offset="0.5"/>
+                    </GradientStopCollection>
+                </GradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Border.Background>
+        <!--定义3行的Grid，用来放置控件-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <!--显示窗口标题-->
+            <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="我的行事薄" Margin="1" Padding="5"></TextBlock>
+                <Image Source="GotoShortcutsHS.png" Margin="0,0,10,0" Grid.Column="2" MouseDown="Image_MouseDown"></Image>
+            </Grid>
+            <!--显示窗口内容的文本框-->
+             <TextBox Grid.Row="1" Background="#02B5CBEF" TextWrapping="Wrap">
+                 使用WPF提供的绘图工具绘制窗口的非矩形背景，这需要开发人员掌握一些美工知识，
+                 微软提供了相应的设计工具如Expression Bland或者是Design等，可以导出为XAML。</TextBox>
+            <!--显示窗口页脚-->
+            <TextBlock Grid.Row="2" Text="2013年X月X日" Margin="1,10,1,1" 
+                       Padding="5" HorizontalAlignment="Center"></TextBlock>
+            <!--定义一个透明矩形，用作调整窗口大小的容器-->
+            <Rectangle Grid.RowSpan="3" Width="5"
+                        VerticalAlignment="Stretch" HorizontalAlignment="Right"
+                        Cursor="SizeWE" Fill="Transparent"
+                        MouseLeftButtonDown="LeftButtonDown"
+                        MouseLeftButtonUp="LeftButtonUp"
+                        MouseMove="RectangleMouseMove">                
+            </Rectangle>
+        </Grid>
+    </Border>
+</Window>

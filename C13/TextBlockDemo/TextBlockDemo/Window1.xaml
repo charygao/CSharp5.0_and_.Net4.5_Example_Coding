@@ -1,0 +1,31 @@
+﻿<Window x:Class="TextBlockDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="TextBlock示例程序1" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <GroupBox Header="简单文本">
+            <StackPanel>
+                <TextBlock Text="使用Text属性设置简单的文本"  TextDecorations="UnderLine">                 
+                </TextBlock>
+                <TextBlock FontSize="20">
+                    <Run Text="删除线" TextDecorations="Strikethrough"></Run>
+                    <Run Text="上划线" TextDecorations="OverLine"></Run>
+                    <Run Text="基线" TextDecorations="Baseline"></Run>
+                    <Run Text="下划线" TextDecorations="Underline"></Run>
+                </TextBlock>
+                <TextBlock FontSize="15">
+                    <Bold>加粗文本</Bold>
+                    <Italic>斜体文本</Italic>
+                    <Bold><Underline>粗体下划线文本</Underline></Bold>
+                </TextBlock>
+            </StackPanel>            
+        </GroupBox>
+        <GroupBox Grid.Row="1" Header="编程添加TextBlock文本">
+            <StackPanel Name="stackpanel"></StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>

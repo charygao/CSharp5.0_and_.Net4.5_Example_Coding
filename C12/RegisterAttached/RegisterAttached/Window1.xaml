@@ -1,0 +1,9 @@
+﻿<Window x:Class="RegisterAttached.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:RegisterAttached"
+    Title="Window1" Height="300" Width="300">
+    <!--使用附加属性-->
+    <Grid local:Window1.IsPopup="true">
+    </Grid>
+</Window>

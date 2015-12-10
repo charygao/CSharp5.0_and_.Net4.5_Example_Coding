@@ -1,0 +1,4 @@
+<Button xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Foreground="LightSeaGreen" FontSize="24pt">
+    可以用IE直接把本文本打开
+</Button>

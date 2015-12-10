@@ -1,0 +1,18 @@
+﻿<Window x:Class="ShowingaWindow.ShowingWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ShowingWindow" Height="300" Width="300">
+    <Window.Background>
+        <SolidColorBrush Color="AliceBlue"></SolidColorBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition  Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
+            <Button IsDefault="True" Name="btnok" Content="确定" Margin="10"></Button>
+            <Button IsCancel="True" Name="btncancel" Content="取消" Margin="10"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,35 @@
+﻿<Window x:Class="OpacityMaskDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="OpacityMask示例" Height="300" Width="500">
+    <Window.Background>
+        <!--将窗口背景设为一幅图像-->
+        <ImageBrush ImageSource="SL381106.jpg"></ImageBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--按钮蒙板-->
+        <Button FontSize="14" FontWeight="Bold">
+            <Button.OpacityMask>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Offset="0" Color="Black"></GradientStop>
+                    <GradientStop Offset="1" Color="Transparent"></GradientStop>
+                </LinearGradientBrush>
+            </Button.OpacityMask>
+            <Button.Content>具有局部透明效果的按钮</Button.Content>
+        </Button>
+        <!-- 图像蒙板-->
+        <Image Source="SL381417.jpg" Grid.Row="1" Stretch="None">
+            <Image.OpacityMask>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Offset="0" Color="Transparent"></GradientStop>
+                    <GradientStop Offset="0.5" Color="#95EEEEFF"></GradientStop>
+                    <GradientStop Offset="1" Color="#10EFEFEF"></GradientStop>
+                </LinearGradientBrush>
+            </Image.OpacityMask>
+        </Image>
+    </Grid>
+</Window>

@@ -1,0 +1,35 @@
+﻿<Window x:Class="CommonDialogDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="通用对话框示例" Height="400" Width="400"
+    ResizeMode="CanResizeWithGrip"
+    Closing="mainWindow_Closing">
+    <DockPanel>
+       <!--定义基本的菜单-->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" Click="fileOpen_Click" />
+                <MenuItem Header="_Save" Click="fileSave_Click" />
+                <MenuItem Header="_Print" Click="filePrint_Click" />
+                <Separator />
+                <MenuItem Header="_Exit" Click="fileExit_Click" />
+            </MenuItem>            
+        </Menu>
+      <!--定义一个文本控件来显示文件-->
+        <TextBox
+      Name="documentTextBox"
+      TextChanged="documentTextBox_TextChanged" 
+      ScrollViewer.CanContentScroll="True" 
+      ScrollViewer.HorizontalScrollBarVisibility="Visible" 
+      ScrollViewer.VerticalScrollBarVisibility="Visible" 
+      AcceptsReturn="True" 
+      AcceptsTab="True" 
+      BorderThickness="0" >
+            OpenFileDialog和SaveFileDialog对话框用于打开和保存文件，
+            这两个对话框定义在Microsoft.Win32命名空间中，
+            PrintDialog用于显示一个打印对话框。
+            这些对话框是操作系统实现的，
+            因此，可以在操作系统上运行的所有应用程序中进行共享。
+        </TextBox>
+    </DockPanel>
+</Window>

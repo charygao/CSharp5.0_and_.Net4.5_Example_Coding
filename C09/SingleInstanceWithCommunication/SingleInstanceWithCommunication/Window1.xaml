@@ -1,0 +1,13 @@
+﻿<Window x:Class="SingleInstanceWithCommunication.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--让行占满整个窗体区域-->
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--在Grid的行中放一个TextBox，并设置为自动换行，其水平滚动条自动显示-->
+        <TextBox Name="txtcontent" Grid.Row="0" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"></TextBox>
+    </Grid>
+</Window>

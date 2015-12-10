@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Students" Class="StudentsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=YANGMINGYU\SQLEXPRESS;Initial Catalog=Students;Integrated Security=True;Pooling=False" SettingsObjectName="UseORDesigner.Properties.Settings" SettingsPropertyName="StudentsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Students" Member="Students">
+    <Type Name="Students">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="XingBie" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Age" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScoreID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Scores_Students" Member="Scores" ThisKey="ScoreID" Type="Scores" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Scores" Member="Scores">
+    <Type Name="Scores">
+      <Column Name="ScoreID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Chinese" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Math" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="English" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Scores_Students" Member="Students" OtherKey="ScoreID" Type="Students" Cardinality="One" />
+    </Type>
+  </Table>
+</Database>

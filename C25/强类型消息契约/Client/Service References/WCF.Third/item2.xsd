@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCF.Third" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCF.Third" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8675/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="BodyInfo">
+    <xs:sequence>
+      <xs:element name="Content" nillable="true" type="xs:string" />
+      <xs:element name="Time" type="xs:dateTime" />
+      <xs:element name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BodyInfo" nillable="true" type="tns:BodyInfo" />
+  <xs:complexType name="HeaderInfo">
+    <xs:sequence>
+      <xs:element name="Description" nillable="true" type="xs:string" />
+      <xs:element name="SessionId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HeaderInfo" nillable="true" type="tns:HeaderInfo" />
+  <xs:simpleType name="ResponseCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">101</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Fail">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">102</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResponseCode" nillable="true" type="tns:ResponseCode" />
+</xs:schema>

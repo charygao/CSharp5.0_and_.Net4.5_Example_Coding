@@ -1,0 +1,34 @@
+﻿<Window x:Class="VisualBrushDemo1.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="VisualBrush示例" Height="400" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Rectangle  Stroke="Black" Height="150" Width="180">
+            <Rectangle.Fill>
+                <!--使用VisualBrush填充矩形-->
+                <VisualBrush>
+                    <VisualBrush.Visual>
+                        <StackPanel Background="White">
+                            <Rectangle Width="25" Height="25" Fill="Red" Margin="2" />
+                            <TextBlock FontSize="10pt" Margin="2">你好，中国</TextBlock>
+                            <Button Margin="2">按钮</Button>
+                        </StackPanel>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <StackPanel Grid.Row="1">
+            <Button Name="btn1" Margin="3" Padding="5">复制按钮的外观?</Button>
+            <Rectangle Margin="3" Height="100">
+                <Rectangle.Fill>
+                    <!--让VisualBrush复制按钮btn1的呈现-->
+                    <VisualBrush Visual="{Binding ElementName=btn1}"></VisualBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </StackPanel>
+    </Grid>
+</Window>

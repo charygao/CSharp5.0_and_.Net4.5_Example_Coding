@@ -1,0 +1,23 @@
+﻿<Window x:Class="CreateWPFDependencyProperty.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:CreateWPFDependencyProperty"
+    Title="Window1" Height="300" Width="300" DataContext="MyBook">
+    <Window.Resources>
+        <local:MyBook  BookName="WPF程序设计书籍" x:Key="bookWPF">             
+        </local:MyBook>       
+    </Window.Resources>
+    <!--指定Grid数据绑定源为窗体资源-->
+    <Grid Name="grd" DataContext="{StaticResource bookWPF}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>      
+        <Label Name="lbl" Content="WPF书籍"></Label>
+        <Label Grid.Column="1" Content="{Binding Path=BookName}"></Label>
+    </Grid>  
+</Window>

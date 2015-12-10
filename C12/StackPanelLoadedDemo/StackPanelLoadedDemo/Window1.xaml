@@ -1,0 +1,7 @@
+﻿<Window x:Class="StackPanelLoadedDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <!--为Loaded事件关联一个事件处理器-->
+    <StackPanel Name="stackpanel" Loaded="stackpanel_Loaded" Initialized="stackpanel_Initialized"></StackPanel>
+</Window>

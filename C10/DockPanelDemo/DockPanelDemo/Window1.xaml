@@ -1,0 +1,12 @@
+﻿<Window x:Class="DockPanelDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="DockPanel示例" Height="300" Width="300">
+    <DockPanel LastChildFill="False">
+        <Button DockPanel.Dock="Left">左侧停靠</Button>
+        <Button DockPanel.Dock="Top">停靠在顶部</Button>
+        <Button DockPanel.Dock="Bottom">停靠在底部</Button>
+        <Button DockPanel.Dock="Right">右侧停靠</Button>
+        <Button DockPanel.Dock="Top">剩余空间</Button>
+    </DockPanel>
+</Window>

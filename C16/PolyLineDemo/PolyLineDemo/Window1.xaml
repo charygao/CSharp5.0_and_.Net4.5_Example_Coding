@@ -1,0 +1,12 @@
+﻿<Window x:Class="PolyLineDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="多段线示例" Height="300" Width="300">
+    <Canvas Height="400" Width="400" Name="cav">
+    <!--绘制多段线-->
+    <Polyline Points="10,110 60,10 110,110" Stroke="Black" StrokeThickness="4" />
+    <Polyline Points="10 110,110 110,110 10" Stroke="Black" StrokeThickness="4" Canvas.Left="150" />
+    <Polyline Points="100 10 200 100 10 100" Stroke="Black" StrokeThickness="4" Canvas.Top="150" />
+    </Canvas>
+
+</Window>

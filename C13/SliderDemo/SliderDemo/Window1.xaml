@@ -1,0 +1,26 @@
+﻿<Window x:Class="SliderDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Slider示例程序" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>        
+        <!--具有刻度显示效果的Slider-->
+        <Slider Name="slider1" Width="200" 
+        Orientation="Horizontal" HorizontalAlignment="Left" 
+        IsSnapToTickEnabled="True" Minimum="1" Maximum="20" 
+        TickPlacement="BottomRight"  TickFrequency="1"
+        AutoToolTipPrecision="2" AutoToolTipPlacement="BottomRight"
+        IsDirectionReversed="False"
+        IsMoveToPointEnabled="False"/>
+        <!--指定刻度标记的位置-->
+        <Slider Grid.Row="1" Width="200" Value="50" Orientation="Horizontal" HorizontalAlignment="Left" 
+            IsSnapToTickEnabled="True" Maximum="3" TickPlacement="BottomRight" 
+            AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="2" 
+            Ticks="0, 1.1, 2.5, 3"/>
+    </Grid>
+</Window>

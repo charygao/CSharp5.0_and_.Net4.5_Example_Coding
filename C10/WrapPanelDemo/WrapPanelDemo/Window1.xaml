@@ -1,0 +1,12 @@
+﻿<Window x:Class="WrapPanelDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WrapPanelDemo" Height="300" Width="400">
+    <WrapPanel Margin="3">
+        <Button VerticalAlignment="Top">顶层按钮</Button>
+        <Button MinHeight="60">较高的按钮</Button>
+        <Button VerticalAlignment="Bottom">底部按钮</Button>
+        <Button>拉伸按钮</Button>
+        <Button VerticalAlignment="Center">居中按钮</Button>
+    </WrapPanel>
+</Window>

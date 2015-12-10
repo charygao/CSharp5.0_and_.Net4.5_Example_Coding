@@ -1,0 +1,18 @@
+﻿<Window x:Class="BorderDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Border示例" Height="200" Width="300">
+    <Grid>
+        <!--在StackPanel外面添加一个Border控件，为复选框添加可视化效果-->
+        <Border Margin="5" Padding="5" Background="LightYellow"
+              BorderBrush="Black"  BorderThickness="5" CornerRadius="8,8,8,8"
+              VerticalAlignment="Top">
+            <StackPanel Name="stackPanel2" Margin="15">
+                <CheckBox Name="cb1">WPF程序设计指南</CheckBox>
+                <CheckBox Name="cb2">XAML可扩展应用程序标记语言详解</CheckBox>
+                <CheckBox Name="cb3">使用WPF开发企业级应用程序</CheckBox>
+                <CheckBox Name="cb4">在WPF中创建灵活可维护的用户界面</CheckBox>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

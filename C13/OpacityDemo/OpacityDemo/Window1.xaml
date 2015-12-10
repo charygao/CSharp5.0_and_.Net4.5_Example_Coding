@@ -1,0 +1,20 @@
+﻿<Window x:Class="OpacityDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="元素不透明度设置" Height="300" Width="300">
+    <Window.Background>
+        <!--使用图像画刷填充窗体背景，并设置透明度为0.8-->
+        <ImageBrush ImageSource="Snap1.jpg" Stretch="UniformToFill" Opacity="0.8"></ImageBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--在每一行中分别放置一个Button，并指定不同的透明度-->
+        <Button Name="button1" Opacity="0.4" Margin="20">半透明按钮</Button>
+        <Button Grid.Row="1" Name="button2" Opacity="0.6" Margin="20">半透明按钮</Button>
+        <Button Grid.Row="2" Name="button3" Opacity="0.8" Margin="20">半透明按钮</Button>
+    </Grid>
+</Window>

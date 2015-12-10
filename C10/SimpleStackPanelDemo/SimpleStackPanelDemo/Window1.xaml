@@ -1,0 +1,13 @@
+﻿<Window x:Class="SimpleStackPanelDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="StackPanel示例" Height="300" Width="300">
+    <StackPanel Name="stackPanel1" Margin="20" >
+        <Button Name="button2" MinWidth="100" MaxWidth="200">按钮1</Button>
+        <Button Name="button1" Margin="5" MinWidth="100" MaxWidth="200">按钮2</Button>
+        <Button Name="button3" MinWidth="100" MaxWidth="200">按钮3</Button>
+        <Button Name="button4" Margin="5,8,15,10" MinWidth="100" MaxWidth="200">按钮4</Button>
+        <Button Name="button5" MinWidth="100" MaxWidth="200">按钮5</Button>
+        <StackPanel Height="100"/>
+    </StackPanel>
+</Window>

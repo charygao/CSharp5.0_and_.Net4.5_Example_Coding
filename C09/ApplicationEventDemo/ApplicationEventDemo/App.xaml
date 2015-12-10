@@ -1,0 +1,12 @@
+﻿<Application x:Class="ApplicationEventDemo.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Startup="OnStartup"
+    DispatcherUnhandledException="Application_DispatcherUnhandledException"
+    SessionEnding="Application_SessionEnding"
+    Exit="Application_Exit">
+    <!--指定OnStartup，将使用Startup中的代码启动应用程序-->
+    <Application.Resources>
+         <!--在这里指定应用程序的资源-->
+    </Application.Resources>
+</Application>
